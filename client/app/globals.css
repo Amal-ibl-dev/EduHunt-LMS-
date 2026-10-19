@@ -26,6 +26,9 @@
 @keyframes splash-progress { from { transform: translateX(-120%); } to { transform: translateX(300%); } }
 @keyframes splash-float { 50% { transform: scale(1.06) rotate(8deg); } }
 @media (prefers-reduced-motion: reduce) { .splash-content, .splash-orbit, .splash-progress span { animation: none; } }
+.review-track { animation: review-scroll 24s linear infinite; }
+@keyframes review-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
+@media (prefers-reduced-motion: reduce) { .review-track { animation: none; } }
 .course-art { display: grid; height: 112px; place-items: center; background: #dbeafe; }
 .course-art span { font-size: 31px; font-weight: 900; color: #2563eb; }
 .course-art-python { background: linear-gradient(135deg, #dbeafe, #bbf7d0); }

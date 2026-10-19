@@ -55,8 +55,8 @@ export function LandingHero() {
               <input className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-slate-400" placeholder="Search courses..." aria-label="Search courses" />
               <span aria-hidden className="text-base leading-none">⌕</span>
             </label>
-            <a href={ROUTES.signIn} className="hidden h-11 items-center text-xs font-bold text-slate-700 transition hover:text-brand sm:flex">Log In</a>
-            <Button href={ROUTES.signUp} className="hidden h-11 w-32 rounded-md px-4 text-xs shadow-sm sm:flex">Get Started</Button>
+            <a href={ROUTES.signIn} className="hidden h-2 items-center whitespace-nowrap text-xs font-bold text-slate-700 transition hover:text-brand sm:flex">Log In</a>
+            <Button href={ROUTES.signUp} className="hidden h-5 w-28 rounded-md px-4 text-xs shadow-sm sm:flex">Get Started</Button>
             <details className="relative md:hidden">
               <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-slate-200 text-navy transition hover:border-brand hover:text-brand [&::-webkit-details-marker]:hidden">
                 <span className="sr-only">Open navigation menu</span>
@@ -104,8 +104,6 @@ export function LandingHero() {
         </div>
       </section>
 
-    
-
       <section id="courses" className="mx-auto max-w-7xl px-5 py-10 lg:px-8"><div className="mb-5 flex items-center justify-between"><div><span className="text-[9px] font-bold uppercase tracking-widest text-brand">Featured courses</span><h2 className="mt-1 text-lg font-extrabold">Most Popular Courses</h2><p className="mt-1 text-xs text-slate-500">Handpicked courses loved by learners around the world.</p></div><a href="#courses" className="text-[10px] font-bold text-brand">View All Courses →</a></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{courses.map(([title, author, rating, price, type]) => <article key={title} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm"><CourseArt type={type} /><div className="p-3"><h3 className="line-clamp-2 min-h-8 text-xs font-extrabold leading-4">{title}</h3><p className="mt-2 text-[10px] text-slate-400">{author}</p><p className="mt-2 text-[10px]"><span className="text-amber-500">★ {rating}</span><span className="ml-2 text-slate-300">(1.2k)</span></p><b className="mt-3 block text-sm">{price}</b></div></article>)}</div></section>
 
       <section id="for-business" className="mx-5 mb-12 overflow-hidden rounded-2xl bg-navy px-6 py-5 text-white lg:mx-auto lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-12"><div className="grid grid-cols-2 gap-8 sm:flex"><div><b className="block text-xl">10,000+</b><span className="text-[10px] text-blue-200">Online Courses</span></div><div><b className="block text-xl">50,000+</b><span className="text-[10px] text-blue-200">Happy Learners</span></div><div><b className="block text-xl">200+</b><span className="text-[10px] text-blue-200">Expert Instructors</span></div><div><b className="block text-xl">100%</b><span className="text-[10px] text-blue-200">Satisfaction</span></div></div><a href={ROUTES.signUp} className="mt-5 inline-block text-xs font-bold text-sky-300 lg:mt-0">Build your skills with EduHunt →</a></section>
@@ -133,9 +131,10 @@ export function LandingHero() {
           <h2 className="mt-2 text-2xl font-extrabold text-navy sm:text-3xl">Loved by Learners Worldwide</h2>
           <p className="mt-3 text-xs leading-5 text-slate-500">See how EduHunt helps students build practical skills and reach their goals.</p>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {testimonials.map(([initial, name, role, quote]) => (
-            <article key={name} className="rounded-2xl border border-slate-100 bg-white p-5">
+        <div className="review-carousel mt-8 overflow-hidden" aria-label="Learner reviews">
+          <div className="review-track flex w-max gap-4 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
+            {[...testimonials, ...testimonials].map(([initial, name, role, quote], index) => (
+            <article key={`${name}-${index}`} className="w-[280px] shrink-0 rounded-2xl border border-slate-100 bg-white p-5 sm:w-[350px]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 text-sm font-bold text-brand">{initial}</span>
@@ -145,7 +144,8 @@ export function LandingHero() {
               </div>
               <p className="mt-5 text-xs leading-5 text-slate-600">&ldquo;{quote}&rdquo;</p>
             </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
