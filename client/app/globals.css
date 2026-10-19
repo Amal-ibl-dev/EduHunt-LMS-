@@ -2,7 +2,7 @@
 
 /* Tailwind v4 design tokens. On v3, move these into tailwind.config.ts > theme.extend.colors */
 @theme {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --color-brand: #039ef8;
   --color-brand-dark: #0287d6;
   --color-brand-soft: #bfe3fc;
