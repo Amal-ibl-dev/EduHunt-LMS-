@@ -15,7 +15,7 @@ export default function SignUpPage() {
           Welcome to <br /> EduHunt
         </h1>
         <p className="text-2xl font-medium text-navy">your private tution companion</p>
-        <AuthIllustration src="/images/sign-in-hero.png" alt="Student studying at a desk" className="mt-4 aspect-[4/3] w-full max-w-xl" priority />
+        <AuthIllustration src="/images/sign-up-hero.png" alt="Student studying at a desk" className="mt-4 aspect-[4/3] w-full max-w-xl" priority />
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ export function SignInForm() {
       <p className="text-center text-muted">
         New to EduHunt?{" "}
         <Link href={ROUTES.signUp} className="font-semibold hover:text-brand">
-          Create an Account
+          Create a Account
         </Link>
       </p>
     </form>
