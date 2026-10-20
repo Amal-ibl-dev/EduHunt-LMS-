@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ROUTES } from "@/constants/routes";
 import { COLORS } from "@/config/colors";
-import { LandingFooter } from "./LandingFooter";
-import { LandingHeader } from "./LandingHeader";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
 
 const categories = [
   ["</>", "Development", "1250+ Courses", "bg-violet-100 text-violet-600"],
@@ -39,7 +39,7 @@ export function LandingHero() {
 
   return (
     <main className="min-h-screen bg-[#f8fbff] text-navy" style={brandStyle}>
-      <LandingHeader />
+      <Navbar />
 
       <section className="relative mx-auto min-h-[540px] max-w-7xl overflow-hidden rounded-b-3xl px-5 py-10 lg:px-12 lg:py-16">
         <Image
@@ -61,10 +61,7 @@ export function LandingHero() {
         </div>
       </section>
 
-      <section id="categories" className="relative z-10 mx-5 -mt-12 rounded-2xl border border-slate-100 bg-white px-5 py-6 shadow-lg lg:mx-auto lg:max-w-7xl lg:px-8">
-        <div className="mb-5 flex items-center justify-between"><h2 className="text-lg font-extrabold">Popular Categories</h2><a href="#categories" className="text-[10px] font-bold text-brand">View All Categories →</a></div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{categories.map(([icon, name, count, color]) => <a href="#courses" key={name} className="rounded-xl p-2 transition hover:-translate-y-1"><span className={`flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold ${color}`}>{icon}</span><b className="mt-3 block text-xs">{name}</b><span className="mt-1 block text-[10px] text-slate-400">{count}</span></a>)}</div>
-      </section>
+    
 
       <section id="courses" className="mx-auto max-w-7xl px-5 py-10 lg:px-8"><div className="mb-5 flex items-center justify-between"><div><span className="text-[9px] font-bold uppercase tracking-widest text-brand">Featured courses</span><h2 className="mt-1 text-lg font-extrabold">Most Popular Courses</h2><p className="mt-1 text-xs text-slate-500">Handpicked courses loved by learners around the world.</p></div><a href="#courses" className="text-[10px] font-bold text-brand">View All Courses →</a></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{courses.map(([title, author, rating, price, type]) => <article key={title} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm"><CourseArt type={type} /><div className="p-3"><h3 className="line-clamp-2 min-h-8 text-xs font-extrabold leading-4">{title}</h3><p className="mt-2 text-[10px] text-slate-400">{author}</p><p className="mt-2 text-[10px]"><span className="text-amber-500">★ {rating}</span><span className="ml-2 text-slate-300">(1.2k)</span></p><b className="mt-3 block text-sm">{price}</b></div></article>)}</div></section>
 
@@ -111,7 +108,7 @@ export function LandingHero() {
         </div>
       </section>
 
-      <LandingFooter />
+      <Footer />
     </main>
   );
 }

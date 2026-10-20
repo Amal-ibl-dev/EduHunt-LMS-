@@ -1,9 +1,9 @@
 import type { CSSProperties } from "react";
-import { LandingHeader } from "@/features/landing/components/LandingHeader";
+import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/Button";
 import { COLORS } from "@/config/colors";
 import { ROUTES } from "@/constants/routes";
-import { LandingFooter } from "@/features/landing/components/LandingFooter";
+import { Footer } from "@/components/layout/Footer";
 
 const plans = [
   {
@@ -60,7 +60,7 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen bg-[#f8fbff] text-navy" style={brandStyle}>
-      <LandingHeader />
+      <Navbar />
 
       <section className="mx-auto max-w-7xl px-5 pb-14 pt-16 text-center lg:px-8">
         <span className="text-[10px] font-bold uppercase tracking-widest text-brand">Simple transparent pricing</span>
@@ -107,7 +107,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <LandingFooter />
+      <Footer />
     </main>
   );
 }

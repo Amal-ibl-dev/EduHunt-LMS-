@@ -2,7 +2,7 @@ import { Logo } from "@/components/common/Logo";
 import { Button } from "@/components/ui/Button";
 import { ROUTES } from "@/constants/routes";
 
-export function LandingHeader() {
+export function Navbar() {
   return (
     <header className="border-b border-slate-100 bg-white/90">
       <div className="mx-auto flex max-w-7xl items-center gap-6 px-5 py-4 lg:px-8">
@@ -41,7 +41,7 @@ export function LandingHeader() {
               </div>
               <div className="mt-2 border-t border-slate-100 pt-2 sm:hidden">
                 <a href={ROUTES.signIn} className="block rounded-lg px-3 py-2.5 text-sm font-bold text-slate-600 hover:bg-blue-50 hover:text-brand">Log In</a>
-                <Button href={ROUTES.signUp} className="mt-2 h-10 rounded-lg text-sm">Get Started</Button>
+                <Button href={ROUTES.signUp} className="mt-2 h-5 rounded-lg text-sm">Get Started</Button>
               </div>
             </nav>
           </details>

@@ -18,7 +18,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={font.variable}>
-      <body className="font-sans antialiased">{children}</body>
+      {/* Browser extensions may inject body attributes before React hydrates. */}
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

@@ -33,7 +33,7 @@ function FooterColumn({
   );
 }
 
-export function LandingFooter() {
+export function Footer() {
   return (
     <footer id="top" className="border-t border-slate-800 bg-black">
       <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
