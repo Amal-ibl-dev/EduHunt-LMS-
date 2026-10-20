@@ -9,6 +9,7 @@ const font = Poppins({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+
 export const metadata: Metadata = {
   title: "EduHunt | Learn. Grow. Succeed",
   description: "Your private tuition companion",

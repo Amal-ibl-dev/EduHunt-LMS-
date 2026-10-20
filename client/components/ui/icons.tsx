@@ -39,3 +39,48 @@ export const ChevronDownIcon = (p: IconProps) => (
     <path d="m7 10 5 5 5-5H7Z" />
   </svg>
 );
+
+/* ---- stroke icons used by the dashboard ---- */
+const stroke: IconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+};
+
+export const ArrowLeftIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+);
+export const ArrowRightIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+);
+export const SearchIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+);
+export const DownloadIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M12 4v11M7 11l5 5 5-5M5 20h14" /></svg>
+);
+export const PapersIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}>
+    <path d="M8 7V5a2 2 0 0 1 2-2h5l5 5v8a2 2 0 0 1-2 2h-2" />
+    <path d="M4 9a2 2 0 0 1 2-2h5l4 4v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9Z" />
+  </svg>
+);
+export const NotesIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="5" y="3" width="14" height="18" rx="2" /><path d="M9 8h6M9 12h6M9 16h4" /></svg>
+);
+export const SpeedIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 18a8 8 0 1 1 16 0Z" /><path d="m12 14 3-4" /></svg>
+);
+export const LinkIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}>
+    <path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1" />
+    <path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" />
+  </svg>
+);
+export const TimerIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2 2M10 2h4" /></svg>
+);

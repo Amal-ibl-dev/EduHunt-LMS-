@@ -3,13 +3,27 @@
 /* Tailwind v4 design tokens. On v3, move these into tailwind.config.ts > theme.extend.colors */
 @theme {
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
   --color-brand: #039ef8;
   --color-brand-dark: #0287d6;
   --color-brand-soft: #bfe3fc;
+  --color-brand-muted: #aeddfb;
   --color-navy: #00205b;
   --color-muted: #6b7a90;
   --color-field: #f4f7fb;
   --color-surface: #fdfdfd;
+  --color-page: #f8fafc;
+  --color-profile: #e8eefc;
+  --color-speed: #fdc267;
+  --color-speed-soft: #ffd89b;
+
+  --color-subject-math: #2b7fff;
+  --color-subject-science: #f59e0b;
+  --color-subject-english: #a855f7;
+  --color-subject-history: #10b981;
+  --color-subject-sinhala: #ec4899;
+  --color-subject-buddhism: #14b8a6;
+  --color-subject-all: #2563eb;
 }
 
 .splash-screen { position: relative; display: grid; min-height: 100svh; place-items: center; overflow: hidden; background: #f8fbff; color: var(--color-navy); }

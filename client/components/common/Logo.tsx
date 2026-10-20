@@ -5,11 +5,12 @@ type LogoProps = { className?: string; light?: boolean };
 /** Placeholder mark – swap for your exported logo SVG when ready. */
 export function LogoMark({ className }: LogoProps) {
   return (
-    <svg viewBox="0 0 120 90" className={className} aria-hidden fill="none">
-      <path d="M19 69.5 30.5 24l13 9 12-18 14 18 17-10 14.5 46.5H19Z" fill="currentColor" opacity=".14" />
-      <path d="m17 68 13-45 13 10 12-18 14 18 17-10 16 45" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="7" />
-      <path d="M13 69h94" stroke="currentColor" strokeLinecap="round" strokeWidth="7" />
-      <circle cx="55" cy="15" r="5" fill="currentColor" />
+    <svg viewBox="0 0 120 90" className={className} aria-hidden>
+      <path d="M60 2 92 16 60 30 28 16 60 2Z" fill="#00205B" />
+      <path d="M44 24v10c0 5 7 8 16 8s16-3 16-8V24L60 32l-16-8Z" fill="#00205B" />
+      <path d="M4 44 58 56v30L4 72V44Z" fill="#00B4FF" />
+      <path d="M116 44 62 56v30l54-14V44Z" fill="#0A6CF0" />
+      <path d="M2 74l56 14 4 0 56-14v6L62 94 58 94 2 80v-6Z" fill="#0B3FC8" />
     </svg>
   );
 }
@@ -17,10 +18,10 @@ export function LogoMark({ className }: LogoProps) {
 export function Logo({ className, light = false }: LogoProps) {
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <LogoMark className="h-12 w-16 text-brand" />
-      <div className="leading-none">
-        <span className={cn("block text-xl font-extrabold tracking-tight", light ? "text-white" : "text-navy")}>EduHunt</span>
-        <span className={cn("mt-1 block text-[9px] font-semibold uppercase tracking-[0.2em]", light ? "text-slate-400" : "text-muted")}>Learn. Grow. Succeed.</span>
+      <LogoMark className="h-12 w-16" />
+      <div>
+        <p className="text-4xl font-bold leading-none text-brand-dark">EduHunt</p>
+        <p className="mt-1 text-sm text-navy/70">Learn. Grow. Succeed</p>
       </div>
     </div>
   );

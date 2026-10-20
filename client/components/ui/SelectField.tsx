@@ -11,7 +11,7 @@ type SelectFieldProps = SelectHTMLAttributes<HTMLSelectElement> & {
 };
 
 export function SelectField({ label, icon, placeholder, options, className, ...props }: SelectFieldProps) {
-  const id = useId(); 
+  const id = useId();
 
   return (
     <div className={className}>
