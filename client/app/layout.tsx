@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={font.variable}>
       {/* Browser extensions may inject body attributes before React hydrates. */}
-      <body className="font-sans antialiased" suppressHydrationWarning>
+      <body className="overflow-x-clip font-sans antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>
