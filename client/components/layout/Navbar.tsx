@@ -19,6 +19,12 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden flex-1 items-center justify-center gap-7 text-xs font-semibold text-slate-700 xl:flex">
+           <a
+            href={ROUTES.home + "#categories"}
+            className="transition hover:text-brand"
+          >
+            Home
+          </a>
           <Link
             href={ROUTES.courses}
             className="transition hover:text-brand"
@@ -26,32 +32,20 @@ export function Navbar() {
             Courses
           </Link>
 
-          <a
-            href={ROUTES.home + "#categories"}
-            className="transition hover:text-brand"
-          >
-            Categories
-          </a>
+         
 
-          <a
-            href={ROUTES.home + "#courses"}
-            className="transition hover:text-brand"
-          >
-            Resources
-          </a>
+         
 
-          <a
-            href={ROUTES.home + "#for-business"}
-            className="transition hover:text-brand"
-          >
-            For Business
-          </a>
+        
 
           <Link
             href={ROUTES.pricing}
             className="transition hover:text-brand"
           >
             Pricing
+          </Link>
+          <Link href={ROUTES.about} className="transition hover:text-brand">
+            About
           </Link>
         </nav>
 
@@ -104,6 +98,13 @@ export function Navbar() {
             {/* Mobile Dropdown */}
             <nav className="absolute right-0 top-12 z-20 w-56 max-w-[calc(100vw-2.5rem)] rounded-xl border border-slate-100 bg-white p-3 shadow-xl">
               <div className="flex flex-col text-sm font-semibold text-slate-600">
+               
+                 <Link
+                  href={ROUTES.home}
+                  className="rounded-lg px-3 py-2.5 hover:bg-blue-50 hover:text-brand"
+                >
+                  Home
+                </Link>
                 <Link
                   href={ROUTES.courses}
                   className="rounded-lg px-3 py-2.5 hover:bg-blue-50 hover:text-brand"
@@ -111,26 +112,16 @@ export function Navbar() {
                   Courses
                 </Link>
 
-                <a
-                  href={ROUTES.home + "#categories"}
-                  className="rounded-lg px-3 py-2.5 hover:bg-blue-50 hover:text-brand"
-                >
-                  Categories
-                </a>
+               
 
-                <a
-                  href={ROUTES.home + "#courses"}
-                  className="rounded-lg px-3 py-2.5 hover:bg-blue-50 hover:text-brand"
-                >
-                  Resources
-                </a>
+              
 
-                <a
-                  href={ROUTES.home + "#for-business"}
+                <Link
+                  href={ROUTES.about}
                   className="rounded-lg px-3 py-2.5 hover:bg-blue-50 hover:text-brand"
                 >
                   About
-                </a>
+                </Link>
 
                 <Link
                   href={ROUTES.pricing}

@@ -1,4 +1,5 @@
 import { Logo } from "@/components/common/Logo";
+import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 
 const footerLinks = {
@@ -20,12 +21,12 @@ function FooterColumn({
       <ul className="mt-4 space-y-3">
         {links.map((link) => (
           <li key={link}>
-            <a
-              href="#top"
+            <Link
+              href={link === "About EduHunt" ? ROUTES.about : "#top"}
               className="text-xs text-slate-300 transition hover:text-brand"
             >
               {link}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
