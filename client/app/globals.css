@@ -26,20 +26,6 @@
   --color-subject-all: #2563eb;
 }
 
-.splash-screen { position: relative; display: grid; min-height: 100svh; place-items: center; overflow: hidden; background: #f8fbff; color: var(--color-navy); }
-.splash-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; animation: splash-enter 700ms ease-out both; }
-.splash-logo { display: grid; height: 112px; width: 112px; place-items: center; border-radius: 32px; color: #6240EF; background: white; box-shadow: 0 18px 45px rgb(98 64 239 / 18%); }
-.splash-wordmark { margin-top: 22px; font-size: 36px; font-weight: 800; letter-spacing: -0.04em; }
-.splash-tagline { margin-top: 4px; color: var(--color-muted); font-size: 13px; font-weight: 600; }
-.splash-progress { margin-top: 34px; height: 4px; width: 132px; overflow: hidden; border-radius: 99px; background: #e9e5ff; }
-.splash-progress span { display: block; height: 100%; width: 35%; border-radius: inherit; background: #6240EF; animation: splash-progress 1800ms ease-in-out forwards; }
-.splash-orbit { position: absolute; border: 1px solid rgb(98 64 239 / 12%); border-radius: 999px; animation: splash-float 5s ease-in-out infinite; }
-.splash-orbit-one { height: 520px; width: 520px; }
-.splash-orbit-two { height: 760px; width: 760px; animation-delay: -2s; }
-@keyframes splash-enter { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
-@keyframes splash-progress { from { transform: translateX(-120%); } to { transform: translateX(300%); } }
-@keyframes splash-float { 50% { transform: scale(1.06) rotate(8deg); } }
-@media (prefers-reduced-motion: reduce) { .splash-content, .splash-orbit, .splash-progress span { animation: none; } }
 .review-track { animation: review-scroll 24s linear infinite; }
 @keyframes review-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
 @media (prefers-reduced-motion: reduce) { .review-track { animation: none; } }
