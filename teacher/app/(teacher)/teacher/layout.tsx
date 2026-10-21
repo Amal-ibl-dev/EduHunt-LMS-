@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
+import { TeacherShell } from "@/features/teacher/components/TeacherShell";
 import { requireTeacher } from "@/lib/auth/require-teacher";
 
 export default async function TeacherLayout({ children }: { children: ReactNode }) {
-  await requireTeacher();
-  return <div className="min-h-screen bg-page">{children}</div>;
+  const session = await requireTeacher();
+  return <TeacherShell session={session}>{children}</TeacherShell>;
 }

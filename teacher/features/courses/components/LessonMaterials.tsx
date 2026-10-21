@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { LinkIcon, NotesIcon } from "@/components/ui/icons";
@@ -8,9 +9,9 @@ const GROUPS = [
   { kind: "link", label: "Class / Video Links", icon: LinkIcon, hint: "Meet, YouTube, Zoom" },
 ] as const;
 
-type Props = { cls: ClassGroup; lesson: Lesson; materials: Material[] };
+type Props = { cls: ClassGroup; lesson: Lesson; materials: Material[]; actions?: ReactNode };
 
-export function LessonMaterials({ cls, lesson, materials }: Props) {
+export function LessonMaterials({ cls, lesson, materials, actions }: Props) {
   return (
     <div className="space-y-6">
       <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -21,7 +22,7 @@ export function LessonMaterials({ cls, lesson, materials }: Props) {
           </p>
         </div>
         {/* TODO: upload / add-link form */}
-        <Button variant="admin" size="sm">+ Add resource</Button>
+        {actions ?? <Button variant="admin" size="sm">+ Add resource</Button>}
       </Card>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,18rem),1fr))] gap-4 xl:gap-6">

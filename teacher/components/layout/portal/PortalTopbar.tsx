@@ -1,20 +1,17 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { Avatar } from "@/components/ui/Avatar";
 import { BellIcon, ChevronDownIcon, MenuIcon, SearchIcon } from "@/components/ui/icons";
-import { ADMIN_NAV } from "../admin-nav";
-import type { AdminSession } from "../types";
+import { isActive, type NavItem } from "./nav";
 
-type AdminTopbarProps = { session: AdminSession; onMenuClick: () => void };
+export type PortalUser = { name: string; subtitle: string; avatarUrl?: string };
 
-export function AdminTopbar({ session, onMenuClick }: AdminTopbarProps) {
+type PortalTopbarProps = { items: NavItem[]; user: PortalUser; onMenuClick: () => void };
+
+export function PortalTopbar({ items, user, onMenuClick }: PortalTopbarProps) {
   const pathname = usePathname();
-  const title = ADMIN_NAV.find((i) => pathname.startsWith(i.href))?.label ?? "Admin";
-  const initials = session.name
-    .split(" ")
-    .map((n) => n[0])
-    .slice(0, 2)
-    .join("");
+  const title = items.find((i) => isActive(pathname, i))?.label ?? "Dashboard";
 
   return (
     <header className="flex items-center justify-between gap-3">
@@ -43,10 +40,10 @@ export function AdminTopbar({ session, onMenuClick }: AdminTopbarProps) {
           <span className="absolute right-0 top-0 h-2 w-2 rounded-full bg-coral" />
         </button>
         <div className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-soft font-semibold text-accent">{initials}</span>
+          <Avatar name={user.name} src={user.avatarUrl} className="h-11 w-11 text-sm" />
           <span className="hidden max-w-[10rem] leading-tight xl:block">
-            <span className="block truncate font-medium text-slate-800">{session.name}</span>
-            <span className="block text-xs capitalize text-slate-400">{session.role}</span>
+            <span className="block truncate font-medium text-slate-800">{user.name}</span>
+            <span className="block text-xs capitalize text-slate-400">{user.subtitle}</span>
           </span>
           <ChevronDownIcon className="hidden h-5 w-5 text-slate-700 xl:block" />
         </div>
