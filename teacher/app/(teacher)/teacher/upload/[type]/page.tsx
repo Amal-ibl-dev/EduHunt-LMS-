@@ -1,26 +1,23 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageContainer } from "@/components/layout/PageContainer";
-import { TEACHER_ROUTES } from "@/constants/teacher-routes";
-import { TeacherHeader } from "@/features/teacher/components/TeacherHeader";
 import { TeacherQuickAccess } from "@/features/teacher/components/TeacherQuickAccess";
 import { ClassLinkForm } from "@/features/teacher-upload/components/ClassLinkForm";
 import { UploadDropzone } from "@/features/teacher-upload/components/UploadDropzone";
 import { UPLOAD_TYPES, isUploadType } from "@/features/teacher-upload/upload-types";
 import { requireTeacher } from "@/lib/auth/require-teacher";
 
-export const metadata: Metadata = { title: "Upload | EduHunt Teacher" };
+export const metadata: Metadata = { title: "Uploads | EduHunt Teacher" };
 
 export default async function TeacherUploadPage({ params }: { params: Promise<{ type: string }> }) {
-  const teacher = await requireTeacher();
+  await requireTeacher();
   const { type } = await params;
   if (!isUploadType(type)) notFound();
 
   return (
-    <PageContainer className="max-w-7xl space-y-8">
-      <TeacherHeader title={UPLOAD_TYPES[type].title} teacher={teacher} backHref={TEACHER_ROUTES.dashboard} />
+    <div className="space-y-6 xl:space-y-8">
+      <h2 className="text-2xl font-bold text-navy">{UPLOAD_TYPES[type].title}</h2>
       <TeacherQuickAccess active={type} />
       {type === "class-links" ? <ClassLinkForm /> : <UploadDropzone type={type} />}
-    </PageContainer>
+    </div>
   );
 }

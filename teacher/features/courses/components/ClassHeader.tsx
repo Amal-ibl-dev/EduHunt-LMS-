@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { ClassGroup } from "../types";
 
-export function ClassHeader({ cls }: { cls: ClassGroup }) {
+type ClassHeaderProps = { cls: ClassGroup; addLessonHref?: string; editHref?: string };
+
+export function ClassHeader({ cls, addLessonHref, editHref }: ClassHeaderProps) {
   return (
     <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="min-w-0">
@@ -14,7 +16,16 @@ export function ClassHeader({ cls }: { cls: ClassGroup }) {
         </p>
       </div>
       {/* TODO: open an add-lesson form */}
-      <Button variant="admin" size="sm">+ Add lesson</Button>
+      <div className="flex flex-wrap gap-3">
+        {editHref && (
+          <Button href={editHref} variant="adminOutline" size="sm">
+            Edit class
+          </Button>
+        )}
+        <Button href={addLessonHref} variant="admin" size="sm">
+          + Add lesson
+        </Button>
+      </div>
     </Card>
   );
 }

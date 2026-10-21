@@ -142,3 +142,15 @@ export const IdCardIcon = (p: IconProps) => (
 export const CalendarIcon = (p: IconProps) => (
   <svg {...stroke} {...p}><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>
 );
+export const VideoIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="6" width="13" height="12" rx="2" /><path d="m16 10 5-3v10l-5-3" /></svg>
+);
+export const UserCircleIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+);
+export const PencilIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.500 6.500 4 4" /></svg>
+);
+export const CameraIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 8a2 2 0 0 1 2-2h2l1.500-2h5L16 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" /><circle cx="12" cy="13" r="3.500" /></svg>
+);

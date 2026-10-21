@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 import type { Kpi } from "../services/teacher-dashboard.service";
 
 const STYLE = {
-  students: { icon: UsersIcon, tone: "bg-sky-100 text-brand-dark" },
+  students: { icon: UsersIcon, tone: "bg-admin-soft text-admin-dark" },
   papers: { icon: PapersIcon, tone: "bg-blue-100 text-blue-600" },
   notes: { icon: NotesIcon, tone: "bg-purple-100 text-purple-600" },
   tests: { icon: SpeedIcon, tone: "bg-amber-100 text-amber-500" },

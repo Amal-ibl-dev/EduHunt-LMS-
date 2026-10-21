@@ -44,3 +44,13 @@
     radial-gradient(60rem 40rem at 100% 100%, #e3ebff 0%, transparent 60%),
     #fbfcff;
 }
+
+/* Re-maps the blue "brand" tokens to purple inside the portal shells, so shared
+   components (inputs, buttons, charts) turn purple without code changes. (Tailwind v4) */
+.theme-purple {
+  --color-brand: #7c5cf0;
+  --color-brand-dark: #6847dc;
+  --color-brand-soft: #e2dafc;
+  --color-brand-muted: #cfc3fa;
+  --color-navy: #1f1b4d;
+}

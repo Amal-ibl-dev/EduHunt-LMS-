@@ -15,7 +15,7 @@ export type ClassGroup = {
 
 export type Lesson = { id: string; classId: string; number: number; title: string; materialCount: number };
 
-export type MaterialFormat = "PDF" | "DOCX" | "Meet" | "YouTube" | "Zoom";
+export type MaterialFormat = "PDF" | "DOCX" | "Note" | "Meet" | "YouTube" | "Zoom" | "Link";
 
 export type Material = {
   id: string;

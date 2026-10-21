@@ -1,1 +1,1 @@
-export type TeacherSession = { name: string; fullName: string; title: string; avatarUrl?: string };
+export type TeacherSession = { id: string; name: string; fullName: string; title: string; avatarUrl?: string };
