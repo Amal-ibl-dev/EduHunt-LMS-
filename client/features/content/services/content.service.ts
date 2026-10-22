@@ -29,3 +29,7 @@ export async function getContent(type: ContentType): Promise<ContentItem[]> {
 export async function getRecentContent(): Promise<ContentItem[]> {
   return RECENT_IDS.map((id) => CONTENT.find((c) => c.id === id)).filter((c): c is ContentItem => Boolean(c));
 }
+
+export async function getAllContent(): Promise<ContentItem[]> {
+  return CONTENT;
+}

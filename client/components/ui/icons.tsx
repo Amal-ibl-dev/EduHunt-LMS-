@@ -84,3 +84,73 @@ export const LinkIcon = (p: IconProps) => (
 export const TimerIcon = (p: IconProps) => (
   <svg {...stroke} {...p}><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2 2M10 2h4" /></svg>
 );
+
+/* ---- admin icons ---- */
+export const GridIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="3" width="7" height="7" rx="2" /><rect x="14" y="3" width="7" height="7" rx="2" /><rect x="3" y="14" width="7" height="7" rx="2" /><rect x="14" y="14" width="7" height="7" rx="2" /></svg>
+);
+export const UsersIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.500a3.500 3.500 0 0 1 0 7M18 14.500a6.500 6.500 0 0 1 3.500 5.500" /></svg>
+);
+export const TeacherIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4M8 9h8" /></svg>
+);
+export const WalletIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M3 7a2 2 0 0 1 2-2h13v4" /><rect x="3" y="7" width="18" height="13" rx="2" /><circle cx="16.500" cy="13.500" r="1" /></svg>
+);
+export const BookIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z" /><path d="M19 19v2H6" /></svg>
+);
+export const SettingsIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.900 4.900 7 7M17 17l2.100 2.100M4.900 19.100 7 17M17 7l2.100-2.100" /></svg>
+);
+export const BellIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8ZM10 20a2 2 0 0 0 4 0" /></svg>
+);
+export const MenuIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+);
+export const PlusIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M12 5v14M5 12h14" /></svg>
+);
+export const LogoutIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" /></svg>
+);
+export const LayersIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 13 9 5 9-5" /></svg>
+);
+
+/* ---- teacher portal icons ---- */
+export const UploadCloudIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="m16 16-4-4-4 4M12 12v9" /><path d="M20.400 18.100A5 5 0 0 0 18 9h-1.300A8 8 0 1 0 4 16.300" /></svg>
+);
+export const CheckIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="m5 12 5 5L20 7" /></svg>
+);
+export const XIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M18 6 6 18M6 6l12 12" /></svg>
+);
+export const MailIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+);
+export const PhoneIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" /></svg>
+);
+export const IdCardIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="5" width="18" height="14" rx="2" /><circle cx="9" cy="11" r="2" /><path d="M6 16c.5-1.500 1.700-2 3-2s2.500.5 3 2M15 10h3M15 14h3" /></svg>
+);
+export const CalendarIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>
+);
+export const VideoIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><rect x="3" y="6" width="13" height="12" rx="2" /><path d="m16 10 5-3v10l-5-3" /></svg>
+);
+export const UserCircleIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+);
+export const PencilIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.500 6.500 4 4" /></svg>
+);
+export const CameraIcon = (p: IconProps) => (
+  <svg {...stroke} {...p}><path d="M4 8a2 2 0 0 1 2-2h2l1.500-2h5L16 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" /><circle cx="12" cy="13" r="3.500" /></svg>
+);

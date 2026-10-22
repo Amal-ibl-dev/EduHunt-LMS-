@@ -7,3 +7,10 @@ export const formatTime = (totalSeconds: number) => {
 };
 
 export const pluralItems = (n: number) => `${n} ${n === 1 ? "Item" : "Items"} Found`;
+
+export const formatCurrency = (amount: number) =>
+  new Intl.NumberFormat("en-LK", { style: "currency", currency: "LKR", maximumFractionDigits: 0 }).format(amount);
+
+/** "2026-10" -> "Oct 2026" */
+export const formatMonth = (yyyyMm: string) =>
+  new Date(`${yyyyMm}-01T00:00:00Z`).toLocaleString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
