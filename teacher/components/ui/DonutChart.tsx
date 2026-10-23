@@ -2,14 +2,16 @@ type Segment = { label: string; value: number; color: string };
 
 export function DonutChart({ segments, centerLabel }: { segments: Segment[]; centerLabel: string }) {
   const total = segments.reduce((t, s) => t + s.value, 0) || 1;
-  let acc = 0;
-  const stops = segments
-    .map((s) => {
-      const from = (acc / total) * 100;
-      acc += s.value;
-      return `${s.color} ${from}% ${(acc / total) * 100}%`;
-    })
-    .join(", ");
+  const { stops } = segments.reduce<{ end: number; stops: string[] }>(
+    ({ end, stops }, segment) => {
+      const next = end + segment.value;
+      return {
+        end: next,
+        stops: [...stops, `${segment.color} ${(end / total) * 100}% ${(next / total) * 100}%`],
+      };
+    },
+    { end: 0, stops: [] },
+  );
 
   return (
     <div className="flex flex-col items-center gap-6">
@@ -17,7 +19,7 @@ export function DonutChart({ segments, centerLabel }: { segments: Segment[]; cen
         role="img"
         aria-label={segments.map((s) => `${s.label}: ${s.value}`).join(", ")}
         className="relative h-44 w-44 rounded-full"
-        style={{ background: `conic-gradient(${stops})` }}
+        style={{ background: `conic-gradient(${stops.join(", ")})` }}
       >
         <div className="absolute inset-6 flex flex-col items-center justify-center rounded-full bg-white">
           <span className="text-3xl font-bold text-navy">{total}</span>

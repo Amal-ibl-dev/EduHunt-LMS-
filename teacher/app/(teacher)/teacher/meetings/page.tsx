@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { TEACHER_PATHS } from "@/constants/teacher-routes";
 import { MeetingsBoard } from "@/features/teacher-meetings/components/MeetingsBoard";
 import { getMeetings } from "@/features/teacher-meetings/services/meetings.service";
-import { requireTeacher } from "@/lib/auth/require-teacher";
+import { requireTeacher } from "../../../../lib/auth/require-teacher";
 
 export const metadata: Metadata = { title: "Public Meetings | EduHunt Teacher" };
 

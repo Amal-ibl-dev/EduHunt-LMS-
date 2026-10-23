@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { LockIcon, UserIcon } from "@/components/ui/icons";
 import { TextField } from "@/components/ui/TextField";
+import { ADMIN_ROUTES } from "@/constants/admin-routes";
 import { ROUTES } from "@/constants/routes";
 
 export function SignInForm() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -17,6 +20,7 @@ export function SignInForm() {
     // TODO: call your auth service here, e.g. await authService.signIn(data)
     console.log(data);
     setLoading(false);
+    router.push(ADMIN_ROUTES.dashboard);
   }
 
   return (

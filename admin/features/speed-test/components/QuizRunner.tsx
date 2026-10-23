@@ -22,7 +22,8 @@ export function QuizRunner({ questions, durationSeconds }: QuizRunnerProps) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [secondsLeft, setSecondsLeft] = useState(durationSeconds);
-  const [finished, setFinished] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const finished = submitted || secondsLeft === 0;
 
   useEffect(() => {
     if (finished) return;
@@ -30,22 +31,18 @@ export function QuizRunner({ questions, durationSeconds }: QuizRunnerProps) {
     return () => clearInterval(id);
   }, [finished]);
 
-  useEffect(() => {
-    if (secondsLeft === 0) setFinished(true);
-  }, [secondsLeft]);
-
   const score = questions.filter((q, i) => answers[i] === q.answerIndex).length;
 
   function restart() {
     setCurrent(0);
     setAnswers({});
     setSecondsLeft(durationSeconds);
-    setFinished(false);
+    setSubmitted(false);
   }
 
   function next() {
     // TODO: when finished, POST the result so it appears in Speed Test History
-    if (current === questions.length - 1) setFinished(true);
+    if (current === questions.length - 1) setSubmitted(true);
     else setCurrent((c) => c + 1);
   }
 

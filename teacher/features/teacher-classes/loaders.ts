@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getClassById, getLessonById } from "@/features/courses/services/courses.service";
-import { requireTeacher } from "@/lib/auth/require-teacher";
+import { requireTeacher } from "../../lib/auth/require-teacher";
 
 /** Loads a class and makes sure it belongs to the signed-in teacher. */
 export async function loadOwnedClass(classId: string) {

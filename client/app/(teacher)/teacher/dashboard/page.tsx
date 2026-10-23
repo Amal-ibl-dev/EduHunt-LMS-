@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { WelcomeBanner } from "@/components/ui/WelcomeBanner";
 import { TeacherQuickAccess } from "@/features/teacher/components/TeacherQuickAccess";
 import { KpiCards } from "@/features/teacher-dashboard/components/KpiCards";
 import {
@@ -15,16 +14,11 @@ import { requireTeacher } from "@/lib/auth/require-teacher";
 export const metadata: Metadata = { title: "Teacher Dashboard | EduHunt" };
 
 export default async function TeacherDashboardPage() {
-  const teacher = await requireTeacher();
+  await requireTeacher();
   const data = await getTeacherDashboard();
 
   return (
     <div className="space-y-6 xl:space-y-8">
-      <WelcomeBanner
-        title={`Hi ${teacher.name}!`}
-        text={`You have ${data.upcoming.length} classes coming up and ${data.kpis[0].b.value} new students. Keep teaching!`}
-      />
-
       <section aria-labelledby="qa" className="space-y-4">
         <h2 id="qa" className="text-xl font-semibold text-navy">Quick access</h2>
         <TeacherQuickAccess />

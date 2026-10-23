@@ -5,7 +5,7 @@ import { TEACHER_PATHS } from "@/constants/teacher-routes";
 import { ClassCard } from "@/features/courses/components/ClassCard";
 import { ClassGrid } from "@/features/courses/components/ClassGrid";
 import { getClassesByTeacher } from "@/features/courses/services/courses.service";
-import { requireTeacher } from "@/lib/auth/require-teacher";
+import { requireTeacher } from "../../../../lib/auth/require-teacher";
 
 export const metadata: Metadata = { title: "My Classes | EduHunt Teacher" };
 

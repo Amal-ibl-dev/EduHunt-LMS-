@@ -4,10 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     agentFeedback: true,
+    // Rebuild local imports on startup instead of restoring stale resolver data.
+    turbopackFileSystemCacheForDev: false,
   },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
+    root: __dirname,
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],

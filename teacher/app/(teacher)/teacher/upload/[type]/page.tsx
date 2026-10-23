@@ -4,7 +4,7 @@ import { TeacherQuickAccess } from "@/features/teacher/components/TeacherQuickAc
 import { ClassLinkForm } from "@/features/teacher-upload/components/ClassLinkForm";
 import { UploadDropzone } from "@/features/teacher-upload/components/UploadDropzone";
 import { UPLOAD_TYPES, isUploadType } from "@/features/teacher-upload/upload-types";
-import { requireTeacher } from "@/lib/auth/require-teacher";
+import { requireTeacher } from "../../../../../lib/auth/require-teacher";
 
 export const metadata: Metadata = { title: "Uploads | EduHunt Teacher" };
 
