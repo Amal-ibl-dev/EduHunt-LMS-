@@ -5,8 +5,15 @@ import { TEACHER_ROUTES } from "@/constants/teacher-routes";
 import { CourseForm } from "@/features/teacher-courses/components/CourseForm";
 import { getTeacherCourse } from "@/features/teacher-courses/services/teacher-courses.service";
 import { requireTeacher } from "@/lib/auth/require-teacher";
+import { getCourseParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Edit Course | EduHunt Teacher" };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getCourseParams();
+}
 
 export default async function EditCoursePage({ params }: { params: Promise<{ courseId: string }> }) {
   await requireTeacher();

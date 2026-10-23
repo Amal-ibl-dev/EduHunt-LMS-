@@ -5,8 +5,15 @@ import { ADMIN_PATHS, ADMIN_ROUTES } from "@/constants/admin-routes";
 import { LessonMaterials } from "@/features/courses/components/LessonMaterials";
 import { getClassById, getLessonById, getMaterialsByLesson } from "@/features/courses/services/courses.service";
 import { requireRole } from "@/lib/auth/require-role";
+import { getLessonParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Lesson resources | EduHunt Admin" };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getLessonParams();
+}
 
 export default async function CourseLessonPage({ params }: { params: Promise<{ classId: string; lessonId: string }> }) {
   await requireRole(["admin", "teacher"]);

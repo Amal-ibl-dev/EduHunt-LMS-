@@ -6,8 +6,15 @@ import { LessonMaterials } from "@/features/courses/components/LessonMaterials";
 import { getMaterialsByLesson } from "@/features/courses/services/courses.service";
 import { AddResourceDialog } from "@/features/teacher-classes/components/AddResourceDialog";
 import { loadOwnedLesson } from "@/features/teacher-classes/loaders";
+import { getOwnedLessonParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Lesson | EduHunt Teacher" };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getOwnedLessonParams();
+}
 
 export default async function TeacherLessonPage({ params }: { params: Promise<{ classId: string; lessonId: string }> }) {
   const { classId, lessonId } = await params;

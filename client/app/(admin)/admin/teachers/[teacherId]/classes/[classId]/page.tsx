@@ -7,8 +7,15 @@ import { LessonList } from "@/features/courses/components/LessonList";
 import { getClassById, getLessonsByClass } from "@/features/courses/services/courses.service";
 import { getTeacher } from "@/features/teachers/services/teachers.service";
 import { requireRole } from "@/lib/auth/require-role";
+import { getTeacherClassParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Class lessons | EduHunt Admin" };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getTeacherClassParams();
+}
 
 export default async function TeacherClassPage({ params }: { params: Promise<{ teacherId: string; classId: string }> }) {
   await requireRole(["admin"]);

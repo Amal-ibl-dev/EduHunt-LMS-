@@ -8,8 +8,15 @@ import { getClassesByTeacher } from "@/features/courses/services/courses.service
 import { TeacherProfileCard } from "@/features/teachers/components/TeacherProfileCard";
 import { getTeacher } from "@/features/teachers/services/teachers.service";
 import { requireRole } from "@/lib/auth/require-role";
+import { getTeacherParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Teacher profile | EduHunt Admin" };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getTeacherParams();
+}
 
 export default async function TeacherProfilePage({ params }: { params: Promise<{ teacherId: string }> }) {
   await requireRole(["admin"]);

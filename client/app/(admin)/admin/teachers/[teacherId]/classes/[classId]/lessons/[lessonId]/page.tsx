@@ -6,10 +6,17 @@ import { LessonMaterials } from "@/features/courses/components/LessonMaterials";
 import { getClassById, getLessonById, getMaterialsByLesson } from "@/features/courses/services/courses.service";
 import { getTeacher } from "@/features/teachers/services/teachers.service";
 import { requireRole } from "@/lib/auth/require-role";
+import { getTeacherLessonParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Lesson resources | EduHunt Admin" };
 
 type Props = { params: Promise<{ teacherId: string; classId: string; lessonId: string }> };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getTeacherLessonParams();
+}
 
 export default async function TeacherLessonPage({ params }: Props) {
   await requireRole(["admin"]);

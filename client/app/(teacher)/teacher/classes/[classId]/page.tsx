@@ -5,8 +5,15 @@ import { ClassHeader } from "@/features/courses/components/ClassHeader";
 import { LessonList } from "@/features/courses/components/LessonList";
 import { getLessonsByClass } from "@/features/courses/services/courses.service";
 import { loadOwnedClass } from "@/features/teacher-classes/loaders";
+import { getOwnedClassParams } from "@/lib/static-params";
 
 export const metadata: Metadata = { title: "Class lessons | EduHunt Teacher" };
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getOwnedClassParams();
+}
 
 export default async function TeacherClassPage({ params }: { params: Promise<{ classId: string }> }) {
   const { classId } = await params;
