@@ -7,6 +7,8 @@ export const TEACHER_ROUTES = {
   courses: "/teacher/courses",
   meetings: "/teacher/meetings",
   profile: "/teacher/profile",
+  spotTime: "/teacher/spot-time",
+  notifications: "/teacher/notifications",
   upload: (type: string) => `/teacher/upload/${type}`,
 } as const;
 
@@ -21,4 +23,6 @@ export const TEACHER_PATHS = {
   courseNew: "/teacher/courses/new",
   courseEdit: (courseId: string) => `/teacher/courses/${courseId}/edit`,
   meetingNew: "/teacher/meetings/new",
+  spotNew: "/teacher/spot-time/new",
+  spotEdit: (testId: string) => `/teacher/spot-time/${testId}/edit`,
 };

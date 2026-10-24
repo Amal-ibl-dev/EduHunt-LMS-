@@ -11,6 +11,8 @@ export type ClassGroup = {
   subject: Subject;
   studentCount: number;
   lessonCount: number;
+  /** ISO date the class starts */
+  startDate: string;
 };
 
 export type Lesson = { id: string; classId: string; number: number; title: string; materialCount: number };

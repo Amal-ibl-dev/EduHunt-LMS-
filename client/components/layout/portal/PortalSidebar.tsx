@@ -26,7 +26,7 @@ export function PortalSidebar({ items, subtitle, footerLinks = [], onNavigate }:
       </div>
 
       <nav aria-label={subtitle} className="flex-1 space-y-1">
-        {items.map((item) => {
+        {items.filter((i) => !i.hidden).map((item) => {
           const active = isActive(pathname, item);
           const Icon = item.icon;
           return (

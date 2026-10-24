@@ -37,10 +37,11 @@ export function ClassForm({ cls }: { cls?: ClassGroup }) {
           <SelectField compact required name="medium" label="Medium" placeholder="Select medium" options={MEDIUMS} />
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
+          <TextField compact required type="date" name="startDate" label="Class start date" hint="Pick a date from the calendar." defaultValue={cls?.startDate ?? ""} />
           <SelectField compact name="day" label="Class day" placeholder="Select day" options={DAYS} />
           <TextField compact type="time" name="time" label="Start time" />
-          <TextField compact type="number" min={0} name="fee" label="Monthly fee (LKR)" placeholder="3000" />
         </div>
+        <TextField compact type="number" min={0} name="fee" label="Monthly fee (LKR)" placeholder="3000" className="sm:max-w-xs" />
         <TextAreaField name="description" label="Description" placeholder="What will students learn in this class?" />
 
         <div className="flex flex-wrap gap-3">

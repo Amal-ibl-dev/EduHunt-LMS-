@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LayersIcon } from "@/components/ui/icons";
 import { SUBJECT_STYLES } from "@/constants/subjects";
+import { formatDate } from "@/lib/format";
 import type { ClassGroup } from "../types";
 
 type ClassCardProps = { cls: ClassGroup; href: string; showTeacher?: boolean };
@@ -32,7 +33,8 @@ export function ClassCard({ cls, href, showTeacher }: ClassCardProps) {
           <dd className="text-lg font-semibold text-slate-800">{cls.studentCount}</dd>
         </div>
       </dl>
-      <p className="mt-4 text-sm font-medium text-admin-dark group-hover:underline">View lessons →</p>
+      <p className="mt-3 text-sm text-slate-400">Starts {formatDate(cls.startDate)}</p>
+      <p className="mt-2 text-sm font-medium text-admin-dark group-hover:underline">View lessons →</p>
     </Link>
   );
 }

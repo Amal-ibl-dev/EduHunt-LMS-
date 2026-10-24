@@ -1,4 +1,6 @@
-type Segment = { label: string; value: number; color: string };
+import Link from "next/link";
+
+type Segment = { label: string; value: number; color: string; href?: string };
 
 export function DonutChart({ segments, centerLabel }: { segments: Segment[]; centerLabel: string }) {
   const total = segments.reduce((t, s) => t + s.value, 0) || 1;
@@ -24,14 +26,27 @@ export function DonutChart({ segments, centerLabel }: { segments: Segment[]; cen
           <span className="text-xs text-muted">{centerLabel}</span>
         </div>
       </div>
-      <ul className="grid w-full grid-cols-2 gap-x-4 gap-y-2 text-sm text-slate-600">
-        {segments.map((s) => (
-          <li key={s.label} className="flex min-w-0 items-center gap-2">
-            <span aria-hidden className="h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: s.color }} />
-            <span className="truncate">{s.label}</span>
-            <span className="ml-auto font-medium text-slate-800">{s.value}</span>
-          </li>
-        ))}
+      <ul className="grid w-full grid-cols-2 gap-2 text-sm text-slate-600">
+        {segments.map((s) => {
+          const inner = (
+            <>
+              <span aria-hidden className="h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: s.color }} />
+              <span className="truncate">{s.label}</span>
+              <span className="ml-auto font-medium text-slate-800">{s.value}</span>
+            </>
+          );
+          return (
+            <li key={s.label}>
+              {s.href ? (
+                <Link href={s.href} className="flex min-w-0 items-center gap-2 rounded-xl px-2 py-1.5 hover:bg-slate-50">
+                  {inner}
+                </Link>
+              ) : (
+                <span className="flex min-w-0 items-center gap-2 px-2 py-1.5">{inner}</span>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

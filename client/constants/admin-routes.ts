@@ -9,6 +9,7 @@ export const ADMIN_ROUTES = {
   classLinks: "/admin/class-links",
   speedTests: "/admin/speed-tests",
   settings: "/admin/settings",
+  notifications: "/admin/notifications",
 } as const;
 
 /** Builders for dynamic admin URLs, so no page hand-writes a path. */

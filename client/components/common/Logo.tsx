@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 
-type LogoProps = { className?: string; light?: boolean };
+type LogoProps = { className?: string };
 
 /** Placeholder mark – swap for your exported logo SVG when ready. */
 export function LogoMark({ className }: LogoProps) {
@@ -15,7 +15,7 @@ export function LogoMark({ className }: LogoProps) {
   );
 }
 
-export function Logo({ className, light = false }: LogoProps) {
+export function Logo({ className }: LogoProps) {
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <LogoMark className="h-12 w-16" />

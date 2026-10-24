@@ -17,7 +17,7 @@ export function BarChart({ data, ariaLabel, highlight, className }: BarChartProp
   const ticks = [1, 0.75, 0.5, 0.25, 0];
 
   return (
-    <div role="img" aria-label={ariaLabel} className={cn("flex gap-3", className)}>
+    <div role="group" aria-label={ariaLabel} className={cn("flex gap-3", className)}>
       <div className="flex h-56 flex-col justify-between text-xs text-slate-400">
         {ticks.map((t) => (
           <span key={t}>{Math.round(top * t)}</span>
@@ -30,7 +30,7 @@ export function BarChart({ data, ariaLabel, highlight, className }: BarChartProp
           ))}
           <div className="absolute inset-0 flex items-end gap-2 sm:gap-4">
             {data.map((d, i) => (
-              <div key={d.label} className="group relative flex h-full flex-1 items-end" title={`${d.label}: ${d.value}`}>
+              <div key={d.label} tabIndex={0} role="img" aria-label={`${d.label}: ${d.value}`} className="group relative flex h-full flex-1 items-end rounded-t-xl outline-none focus-visible:ring-2 focus-visible:ring-brand">
                 <div
                   className={cn("w-full rounded-t-xl transition", i === hi ? "bg-brand" : "bg-brand-soft group-hover:bg-brand/60")}
                   style={{ height: `${(d.value / top) * 100}%` }}
@@ -38,7 +38,7 @@ export function BarChart({ data, ariaLabel, highlight, className }: BarChartProp
                 <span
                   className={cn(
                     "absolute left-1/2 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-lg bg-navy px-2 py-1 text-xs text-white",
-                    i === hi ? "" : "opacity-0 group-hover:opacity-100",
+                    i === hi ? "" : "opacity-0 group-hover:opacity-100 group-focus:opacity-100",
                   )}
                   style={{ bottom: `${(d.value / top) * 100}%` }}
                 >

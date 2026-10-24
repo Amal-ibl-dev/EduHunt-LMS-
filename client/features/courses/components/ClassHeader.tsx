@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { formatDate } from "@/lib/format";
 import type { ClassGroup } from "../types";
 
 type ClassHeaderProps = { cls: ClassGroup; addLessonHref?: string; editHref?: string };
@@ -12,7 +13,7 @@ export function ClassHeader({ cls, addLessonHref, editHref }: ClassHeaderProps) 
           {cls.grade} – {cls.subject}
         </h2>
         <p className="mt-1 text-slate-500">
-          {cls.teacherName} · {cls.lessonCount} lessons · {cls.studentCount} students
+          {cls.teacherName} · {cls.lessonCount} lessons · {cls.studentCount} students · starts {formatDate(cls.startDate)}
         </p>
       </div>
       {/* TODO: open an add-lesson form */}

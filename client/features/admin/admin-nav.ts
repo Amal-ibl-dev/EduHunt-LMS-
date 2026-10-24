@@ -1,5 +1,6 @@
 import { ADMIN_ROUTES } from "@/constants/admin-routes";
 import {
+  BellIcon,
   BookIcon,
   GridIcon,
   LayersIcon,
@@ -12,7 +13,7 @@ import {
 } from "@/components/ui/icons";
 import type { AdminRole } from "./types";
 
-export const ADMIN_NAV: { label: string; href: string; icon: typeof GridIcon; roles: AdminRole[] }[] = [
+export const ADMIN_NAV: { label: string; href: string; icon: typeof GridIcon; roles: AdminRole[]; hidden?: boolean }[] = [
   { label: "Dashboard", href: ADMIN_ROUTES.dashboard, icon: GridIcon, roles: ["admin", "teacher"] },
   { label: "Students", href: ADMIN_ROUTES.students, icon: UsersIcon, roles: ["admin"] },
   { label: "Teachers", href: ADMIN_ROUTES.teachers, icon: TeacherIcon, roles: ["admin"] },
@@ -22,4 +23,5 @@ export const ADMIN_NAV: { label: string; href: string; icon: typeof GridIcon; ro
   { label: "Class Links", href: ADMIN_ROUTES.classLinks, icon: LinkIcon, roles: ["admin", "teacher"] },
   { label: "Speed Tests", href: ADMIN_ROUTES.speedTests, icon: SpeedIcon, roles: ["admin", "teacher"] },
   { label: "Settings", href: ADMIN_ROUTES.settings, icon: SettingsIcon, roles: ["admin"] },
+  { label: "Notifications", href: ADMIN_ROUTES.notifications, icon: BellIcon, roles: ["admin", "teacher"], hidden: true },
 ];

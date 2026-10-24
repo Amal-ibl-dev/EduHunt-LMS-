@@ -3,15 +3,15 @@ import { getTeachers } from "@/features/teachers/services/teachers.service";
 import type { ClassGroup, Lesson, LessonSection, Material, MaterialFormat } from "../types";
 
 /** Mock data layer – class -> lessons -> sections -> materials. Swap for real queries later. */
-const CLASS_ROWS: [string, string, string, Subject, number][] = [
-  ["c1", "t1", "Grade 10", "Mathematics", 24],
-  ["c2", "t1", "Grade 11", "Mathematics", 18],
-  ["c3", "t2", "Grade 9", "Science", 22],
-  ["c4", "t2", "Grade 10", "Science", 16],
-  ["c5", "t3", "Grade 10", "English", 28],
-  ["c6", "t3", "Grade 9", "English", 23],
-  ["c7", "t4", "Grade 9", "Sinhala", 24],
-  ["c8", "t5", "Grade 10", "History", 19],
+const CLASS_ROWS: [string, string, string, Subject, number, string][] = [
+  ["c1", "t1", "Grade 10", "Mathematics", 24, "2026-01-12"],
+  ["c2", "t1", "Grade 11", "Mathematics", 18, "2026-01-19"],
+  ["c3", "t2", "Grade 9", "Science", 22, "2026-02-02"],
+  ["c4", "t2", "Grade 10", "Science", 16, "2026-02-09"],
+  ["c5", "t3", "Grade 10", "English", 28, "2026-03-01"],
+  ["c6", "t3", "Grade 9", "English", 23, "2026-03-08"],
+  ["c7", "t4", "Grade 9", "Sinhala", 24, "2026-04-05"],
+  ["c8", "t5", "Grade 10", "History", 19, "2026-04-12"],
 ];
 
 const LESSON_TITLES: Record<Subject, string[]> = {
@@ -61,7 +61,7 @@ function lessonsFor(classId: string, subject: Subject): Lesson[] {
 
 export async function getAllClasses(): Promise<ClassGroup[]> {
   const teachers = await getTeachers();
-  return CLASS_ROWS.map(([id, teacherId, grade, subject, studentCount]) => ({
+  return CLASS_ROWS.map(([id, teacherId, grade, subject, studentCount, startDate]) => ({
     id,
     teacherId,
     teacherName: teachers.find((t) => t.id === teacherId)?.name ?? "Unassigned",
@@ -69,6 +69,7 @@ export async function getAllClasses(): Promise<ClassGroup[]> {
     subject,
     studentCount,
     lessonCount: LESSON_TITLES[subject].length,
+    startDate,
   }));
 }
 
